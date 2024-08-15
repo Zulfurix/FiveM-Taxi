@@ -1,7 +1,5 @@
-using System;
-using System.Threading.Tasks;
 using CitizenFX.Core;
-using static CitizenFX.Core.Native.API;
+using System.Threading.Tasks;
 
 namespace FiveM_Taxi.Client
 {
