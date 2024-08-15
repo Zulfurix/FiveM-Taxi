@@ -18,9 +18,8 @@ namespace FiveM_Taxi.Client
 
         public static void CreateTaxi()
         {
-            Taxi createdTaxi = new Taxi(Game.Player, VehicleHash.Taxi, PedHash.Business01AFY, World.GetNextPositionOnStreet(Game.PlayerPed.Position * 1.25f, true));
+            Taxi createdTaxi = new Taxi(Game.Player, VehicleHash.Taxi, PedHash.Business01AFY, World.GetNextPositionOnStreet(Game.PlayerPed.Position * 1.1f, true));
             createdTaxi.DriveTo(World.GetNextPositionOnStreet(Game.PlayerPed.Position, true));
-            createdTaxi.Vehicle.AttachBlip();
         }
 
         public static void AddTaxiToHandler(Taxi taxi)

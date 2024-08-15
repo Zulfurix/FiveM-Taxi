@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using CitizenFX.Core;
+using CitizenFX.Core.Native;
 using static CitizenFX.Core.Native.API;
 
 namespace FiveM_Taxi.Client
@@ -19,6 +20,7 @@ namespace FiveM_Taxi.Client
         public Taxi(Player owner, VehicleHash vehicle, PedHash driver, Vector3 position)
         {
             this.Owner = owner;
+            Debug.WriteLine(owner.Name + " " + vehicle.ToString() + " " + driver.ToString() + " " + position.ToString());
             CreateTaxi(vehicle, driver, position);
         }
 
@@ -42,6 +44,11 @@ namespace FiveM_Taxi.Client
             // Add object to Taxi Handler
             TaxiHandler.AddTaxiToHandler(this);
             this.taxiStatus = TaxiStatus.OPEN;
+
+            // Add map icon
+            Blip taxiBlip = this.vehicle.AttachBlip();
+            taxiBlip.Sprite = BlipSprite.Cab;
+            taxiBlip.Color = BlipColor.White;
 
         }
 

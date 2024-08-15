@@ -17,6 +17,9 @@ namespace FiveM_Taxi.Client
         {
             MenuController.AddMenu(DestMenu);
 
+            // Set menu button to unused key
+            MenuController.MenuToggleKey = Control.MapPointOfInterest;
+
             // Create default menu items
             DestMenu.AddMenuItem(new MenuItem("Waypoint", "Set your waypoint as your destination.")
             {
